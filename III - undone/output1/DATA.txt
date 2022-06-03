@@ -1,0 +1,2 @@
+b"('CAMP NAMES', 'CAMP LOCATION', 'CAMP RATING', 'CAMP RATINGS', 'CAMP MAIN SAISON', 'CAMP SIDE SAISON', 'CAMP STELLPLATZE', 'CAMP STELLPLATZE TOURISTEN', 'CAMP ADRESS', 'CAMP PHONE', 'CAMP FAX', 'CAMP WEBSITE', 'CAMP OPEN TIMES')"
+b"(' Camping - und Ferienpark Wulfener Hals ', '??? Freest bei Kr\xc3\xb6slin ', 'Sehr gut (4.5)', '1073 Bewertungen', 'Hauptsaison 35.40\xe2\x82\xac', 'Nebensaison 18.36\xe2\x82\xac', '752', '395', ' Wulfener Hals Weg 100  23769 Fehmarn  Deutschland ', '+49 4371 8628 0', ' +49.4371-3723 ', 'http://www.wulfenerhals.de', ' 01.01. - 31.12. ')"

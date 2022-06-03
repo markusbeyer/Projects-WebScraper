@@ -1,0 +1,10 @@
+DS02
+
+STARTED 091448Aoct20
+
+Second job was my first Fiverr job from Tim the "excel_hero". Had to scrape the search results on a gig website
+for data (about 10,000 gigs). Script is done, runs 3 hours long though plus some mistakes in the review/response time/delivery time part due
+to some of the latter gigs which only got one so it confuses the code. Didnt fix it, sent it to Tim and let him figure it out. 
+So far most of it is done. Cool job.
+
+FINISHED 110812Aoct20

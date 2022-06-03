@@ -1,0 +1,19 @@
+I am looking for someone to data mine all the gigs from peopleperhourcom that match the search results for 'guest posts'. This is the url containing all the search results: 
+https://www.peopleperhour.com/services/guest+post?ref=search
+
+There are 10,000 gigs listed for this search result.
+What I would like is the following information:
+
+URL of gig: https://www.peopleperhour.com/hourlie/powerful-dr-60-to-75-guest-posts-that-make-your-seo-soar/73895
+
+Title of gig: Powerful DR 60 to 75 Guest Posts That Make Your SEO Soar
+
+Price of gig: $125
+
+Delivery in: 5 days
+
+Rating: 96%
+
+Reviews: 723
+
+Response time: within a few days
