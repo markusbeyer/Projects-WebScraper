@@ -1,6 +1,8 @@
-# WebScraper (from saved HTML file)
+# Projects - WebScraper
 
-This is a Web Scraper which scrapes information from 1 website and 1 page, offline.
+This is a collection of my webscraping projects.
+
+scrape_from_html - a Web Scraper which scrapes information from 1 website and 1 page, offline.
 
 ## Installation
 
