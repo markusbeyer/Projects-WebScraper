@@ -49,18 +49,17 @@ for page_number in range(0, max):
     list_of_rating.append("PAGE "+str(page_number)+"/"+str(maxp))
     list_of_rtime.append("PAGE "+str(page_number)+"/"+str(maxp))
     list_of_reviews.append("PAGE "+str(page_number)+"/"+str(maxp))
-    items = soup.find_all('div', class_="list⤍ResultsList⤚21s3j list--mgb-0⤍ResultsList⤚3qxNR") # not sure how I can do this, there is an arrow in the new class name...
+    items = soup.find_all('ul', class_="list⤍ResultsList⤚21s3j list--mgb-0⤍ResultsList⤚3qxNR")
     for item in items: #going through 25 gigs
         print("\n")
-        print("TITLE         : "+item.find('a')['title'])
+        title = item.find("h2",class_="title-nano card__title⤍HourlieTile⤚5LQtW")
+        title = str(title.text)
+        print("TITLE         : "+title)
         print("LINK          : "+item.find('a')['href'])
-        price = item.find("div",class_="price-container⤍OfferListItem⤚1-Dyc")
-        price = int(str(price.text).strip("€"))
-        eur   = str(price)
-        usd   = "~"+str(c.convert("EUR","USD",price))
-        price = eur+"€ ("+usd+"$)"
+        price = item.find("div",class_="u-txt--right card__price⤍HourlieTileMeta⤚3su1s")
+        price = str(price.text)
         print("PRICE         : "+price)
-        list_of_titles.append(item.find('a')['title'])
+        list_of_titles.append(title)
         list_of_links.append(item.find('a')['href'])
         list_of_prices.append(price)
         link = str(item.find('a')['href']) # link to current gig
