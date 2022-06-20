@@ -49,7 +49,7 @@ for page_number in range(0, max):
     list_of_rating.append("PAGE "+str(page_number)+"/"+str(maxp))
     list_of_rtime.append("PAGE "+str(page_number)+"/"+str(maxp))
     list_of_reviews.append("PAGE "+str(page_number)+"/"+str(maxp))
-    items = soup.find_all('div', class_="???") # not sure how I can do this, there is an arrow in the new class name...
+    items = soup.find_all('div', class_="list⤍ResultsList⤚21s3j list--mgb-0⤍ResultsList⤚3qxNR") # not sure how I can do this, there is an arrow in the new class name...
     for item in items: #going through 25 gigs
         print("\n")
         print("TITLE         : "+item.find('a')['title'])
