@@ -51,46 +51,46 @@ for page_number in range(0, maxp):
     list_of_reviews.append("PAGE "+str(page_number)+"/"+str(maxp))
     items = soup.find_all('ul', class_="list⤍ResultsList⤚21s3j list--mgb-0⤍ResultsList⤚3qxNR")
     for item in items: #going through 25 gigs
-        print(item)
-        print("\n")
-        title = item.find("h2",class_="title-nano card__title⤍HourlieTile⤚5LQtW") #try "li" only?
-        title = str(title.text)
-        print("TITLE         : "+title)
-        print("LINK          : "+item.find('a')['href'])
-        price = item.find("div",class_="u-txt--right card__price⤍HourlieTileMeta⤚3su1s")
-        price = str(price.text)
-        print("PRICE         : "+price)
-        list_of_titles.append(title)
-        list_of_links.append(item.find('a')['href'])
-        list_of_prices.append(price)
-        link = str(item.find('a')['href']) # link to current gig
-        page2 = requests.get(link) # current gig
-        soup2 = BeautifulSoup(page2.text, "html.parser")
-        maininfo = soup2.find_all('div', class_="clearfix main-information row")
-        first = True
-        for i in maininfo: # getting more info of current gig
-            if first == True:
-                stuff         = i.find_all('span')
-                try:
-                    deliver_in    = str(stuff[0].text).strip("\n")
-                    deliver_in    = deliver_in.replace(" ","")
-                    deliver_in    = deliver_in.replace("d"," d")
-                    print("DELIVERY IN   : "+deliver_in)
-                except IndexError:
-                    deliver_in    = "NO DELIVERY TIME FOUND"
-                    print("NO DELIVERY TIME FOUND")
-                try:
-                    rating        = str(stuff[1].text).strip("\n")
-                    print("RATING        : "+rating)
-                except IndexError:
-                    rating        = "NO RATINGS FOUND"
-                    print("NO RATINGS FOUND")
-                try:
-                    reviews = str(stuff[2].text).strip("\n")
-                    print("REVIEWS       : "+reviews)
-                except IndexError:
-                    response_time = "NO REVIEWS FOUND"
-                    print("NO REVIEWS FOUND")
+        for thing in item:
+            print("\n")
+            title = item.find("li")
+            title = str(title.text)
+            print("TITLE         : "+title)
+            print("LINK          : "+item.find('a')['href'])
+            price = item.find("div",class_="u-txt--right card__price⤍HourlieTileMeta⤚3su1s")
+            price = str(price.text)
+            print("PRICE         : "+price)
+            list_of_titles.append(title)
+            list_of_links.append(item.find('a')['href'])
+            list_of_prices.append(price)
+            link = str(item.find('a')['href']) # link to current gig
+            page2 = requests.get(link) # current gig
+            soup2 = BeautifulSoup(page2.text, "html.parser")
+            maininfo = soup2.find_all('div', class_="clearfix main-information row")
+            first = True
+            for i in maininfo: # getting more info of current gig
+                if first == True:
+                    stuff         = i.find_all('span')
+                    try:
+                        deliver_in    = str(stuff[0].text).strip("\n")
+                        deliver_in    = deliver_in.replace(" ","")
+                        deliver_in    = deliver_in.replace("d"," d")
+                        print("DELIVERY IN   : "+deliver_in)
+                    except IndexError:
+                        deliver_in    = "NO DELIVERY TIME FOUND"
+                        print("NO DELIVERY TIME FOUND")
+                    try:
+                        rating        = str(stuff[1].text).strip("\n")
+                        print("RATING        : "+rating)
+                    except IndexError:
+                        rating        = "NO RATINGS FOUND"
+                        print("NO RATINGS FOUND")
+                    try:
+                        reviews = str(stuff[2].text).strip("\n")
+                        print("REVIEWS       : "+reviews)
+                    except IndexError:
+                        response_time = "NO REVIEWS FOUND"
+                        print("NO REVIEWS FOUND")
                 try:
                     response_time = str(stuff[3].text).strip("\n")
                     print("RESPONSE TIME : "+response_time)
