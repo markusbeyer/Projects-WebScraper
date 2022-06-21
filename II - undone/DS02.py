@@ -53,17 +53,17 @@ for page_number in range(0, maxp):
     for item in items: #going through 25 gigs
         for thing in item:
             print("\n")
-            title = item.find("li")
+            title = thing.find("h2")
             title = str(title.text)
             print("TITLE         : "+title)
-            print("LINK          : "+item.find('a')['href'])
-            price = item.find("div",class_="u-txt--right card__price⤍HourlieTileMeta⤚3su1s")
+            print("LINK          : "+thing.find('a')['href'])
+            price = thing.find("div",class_="u-txt--right card__price⤍HourlieTileMeta⤚3su1s")
             price = str(price.text)
             print("PRICE         : "+price)
             list_of_titles.append(title)
-            list_of_links.append(item.find('a')['href'])
+            list_of_links.append(thing.find('a')['href'])
             list_of_prices.append(price)
-            link = str(item.find('a')['href']) # link to current gig
+            link = str(thing.find('a')['href']) # link to current gig
             page2 = requests.get(link) # current gig
             soup2 = BeautifulSoup(page2.text, "html.parser")
             maininfo = soup2.find_all('div', class_="clearfix main-information row")
@@ -91,19 +91,19 @@ for page_number in range(0, maxp):
                     except IndexError:
                         response_time = "NO REVIEWS FOUND"
                         print("NO REVIEWS FOUND")
-                try:
-                    response_time = str(stuff[3].text).strip("\n")
-                    print("RESPONSE TIME : "+response_time)
-                except IndexError:
-                    response_time = "NO RESPONSE TIME FOUND"
-                    print("NO RESPONSE TIME FOUND")
-                list_of_dtime.append(deliver_in)
-                list_of_rating.append(rating)
-                list_of_rtime.append(response_time)
-                list_of_reviews.append(reviews)
-                first = False
-            elif first == False:
-                first = True
+                    try:
+                        response_time = str(stuff[3].text).strip("\n")
+                        print("RESPONSE TIME : "+response_time)
+                    except IndexError:
+                        response_time = "NO RESPONSE TIME FOUND"
+                        print("NO RESPONSE TIME FOUND")
+                    list_of_dtime.append(deliver_in)
+                    list_of_rating.append(rating)
+                    list_of_rtime.append(response_time)
+                    list_of_reviews.append(reviews)
+                    first = False
+                elif first == False:
+                    first = True
 
 with open('list_TITLES.txt', 'w+') as f:
     for line in list_of_titles:
