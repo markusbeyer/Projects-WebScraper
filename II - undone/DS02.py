@@ -36,7 +36,7 @@ maxp = max-1
 
 # Get all of the links to each blog post
 
-for page_number in range(0, max):
+for page_number in range(0, maxp):
     page = requests.get("https://www.peopleperhour.com/services/guest+post?page=%s&ref=search" %page_number) #search results (25 gigs)
     soup = BeautifulSoup(page.text, "html.parser")
     print("----------------------------------")
@@ -73,6 +73,8 @@ for page_number in range(0, max):
                 stuff         = i.find_all('span')
                 try:
                     deliver_in    = str(stuff[0].text).strip("\n")
+                    deliver_in    = deliver_in.replace(" ","")
+                    deliver_in    = deliver_in.replace("d"," d")
                     print("DELIVERY IN   : "+deliver_in)
                 except IndexError:
                     deliver_in    = "NO DELIVERY TIME FOUND"
