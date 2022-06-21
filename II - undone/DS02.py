@@ -53,7 +53,7 @@ for page_number in range(0, maxp):
     for item in items: #going through 25 gigs
         print(item)
         print("\n")
-        title = item.find("h2",class_="title-nano card__title⤍HourlieTile⤚5LQtW")
+        title = item.find("h2",class_="title-nano card__title⤍HourlieTile⤚5LQtW") #try "li" only?
         title = str(title.text)
         print("TITLE         : "+title)
         print("LINK          : "+item.find('a')['href'])
