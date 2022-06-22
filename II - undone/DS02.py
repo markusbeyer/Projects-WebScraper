@@ -33,7 +33,7 @@ for item in items:
 max  = int(max(pagenumbers))+1#plus one, because range(0,max) gets everything in BETWEEN
 maxp = max-1
     
-
+# checking if weird empty scrapes happen and suggest there was a website update?
 # Get all of the links to each blog post
 
 for page_number in range(0, maxp):
