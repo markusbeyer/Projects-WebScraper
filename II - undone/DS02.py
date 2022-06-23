@@ -1,5 +1,4 @@
 import requests
-import time
 from bs4                    import BeautifulSoup
 from forex_python.converter import CurrencyRates
 
@@ -94,7 +93,7 @@ for page_number in range(0, maxp):
                     try:
                         response_time = str(stuff[3].text).strip("\n")
                         print("RESPONSE TIME : "+response_time)
-                    except IndexError:
+                    except IndexError as e:
                         response_time = "NO RESPONSE TIME FOUND"
                         print("NO RESPONSE TIME FOUND")
                     list_of_dtime.append(deliver_in)
