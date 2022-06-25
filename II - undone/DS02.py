@@ -2,6 +2,8 @@ import requests
 from bs4                    import BeautifulSoup
 from forex_python.converter import CurrencyRates
 
+#postponing project for later - focusing on private projects (matrix)
+
 #Has to scrape from target website (https://www.peopleperhour.com/services/guest+post?page=%s&ref=search):
 #URLs of gigs
 list_of_links   = []
